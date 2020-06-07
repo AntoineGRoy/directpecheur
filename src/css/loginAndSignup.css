@@ -1,0 +1,20 @@
+input {
+    font-size:24px;
+    height:32px;
+    width:auto;
+    padding:12px;
+    margin:1rem;
+}
+.form-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:black;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

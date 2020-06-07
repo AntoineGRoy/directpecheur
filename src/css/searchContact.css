@@ -1,0 +1,11 @@
+button.search {
+  width: 4rem;
+  height: 2rem;
+  border: 1px transparent solid;
+  color: white;
+  outline: 0;
+  display: inline;
+  background: rebeccapurple;
+  cursor: pointer;
+  margin: 1rem;
+}

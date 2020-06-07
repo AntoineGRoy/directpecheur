@@ -1,0 +1,26 @@
+.home-container {
+  background: red!important;
+  background: -moz-linear-gradient(
+    17deg,
+    rgba(255, 255, 255, 1) 33%,
+    rgba(126, 52, 219, 1) 54%,
+    rgba(102, 51, 153, 1) 82%
+  );
+  background: -webkit-linear-gradient(
+    17deg,
+    rgba(255, 255, 255, 1) 33%,
+    rgba(126, 52, 219, 1) 54%,
+    rgba(102, 51, 153, 1) 82%
+  );
+  background: linear-gradient(
+    17deg,
+    rgba(255, 255, 255, 1) 33%,
+    rgba(126, 52, 219, 1) 54%,
+    rgba(102, 51, 153, 1) 82%
+  ) !important;
+}
+.button-style-link:hover {
+  color: rebeccapurple;
+  background: white;
+  border: 1px solid rebeccapurple;
+}
