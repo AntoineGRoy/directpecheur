@@ -37,12 +37,16 @@ export const Contact = ({ contactUID }) => {
       userInfos.username
     );
   }
-
-  useEffect(() => {
-    getContactsInfos(contactUID, setContact, contact);
-  }, []);
-  console.log(contact);
-  useEffect(() => {
+//get the Contact Infos
+  const callForContactInfos = useCallback(
+    () => {
+      getContactsInfos(contactUID, setContact, contact);
+    }, [contactUID, setContact, contact]
+  )
+  useEffect(callForContactInfos, []);
+  
+//Set the fontsize depending on name length
+  const setFontSizes = useCallback(() => {
     getChat(contact.username, userInfos.username, setMessages);
     if (contact.username) {
       if (contact.username.length > 12) {
@@ -51,15 +55,19 @@ export const Contact = ({ contactUID }) => {
         setFs(22);
       }
     }
-    //getFireStoreMessagesCount();
-  }, [contact.username]);
+  }, [contact.username, userInfos.username])
+  useEffect(setFontSizes, [contact.username]);
+  
+  //notify the contact when we send him a message
+  const callFirestoreUnreadMessages = useCallback(() =>
+    getFireStoreUnreadMessages(
+      contact.username,
+      userInfos.username,
+      setUnreadMessages
+    ), [contact.username,
+    userInfos.username])
   useEffect(
-    () =>
-      getFireStoreUnreadMessages(
-        contact.username,
-        userInfos.username,
-        setUnreadMessages
-      ),
+    callFirestoreUnreadMessages,
     [messages]
   );
 
