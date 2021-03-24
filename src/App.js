@@ -2,7 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import ChatPage from "./pages/ChatPage";
+import Etal from "./pages/Etal";
 import Signup from "./pages/Signup";
 import { auth } from "./firebase";
 import { UserContext } from "./usercontext";
@@ -22,7 +22,7 @@ function PublicRoute({ component: Component, authenticated, ...rest }) {
     <Route
       {...rest}
       render={props =>
-        !authenticated ? <Component {...props} /> : <Redirect to="chat" />
+        !authenticated ? <Component {...props} /> : <Redirect to="etal" />
       }
     />
   );
@@ -62,10 +62,11 @@ function App() {
         <UserContext.Provider value={providerValue}>
           <Route exact path="/" component={Home}></Route>
           <PrivateRoute
-            path="/chat"
+            path="/etal"
             authenticated={authenticated.loggedin}
-            component={ChatPage}
+            component={Etal}
           ></PrivateRoute>
+          
           <PublicRoute
             path="/signup"
             authenticated={authenticated.loggedin}

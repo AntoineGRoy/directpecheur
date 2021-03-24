@@ -3,14 +3,14 @@ import "firebase/auth";
 import "firebase/firestore";
 
 export const config = {
-    apiKey: "AIzaSyCx9Z6CRQ8yE7oz_-aLLZJFsUsWiO8Hb00",
-    authDomain: "chatcat-f3624.firebaseapp.com",
-    databaseURL: "https://chatcat-f3624.firebaseio.com",
-    projectId: "chatcat-f3624",
-    storageBucket: "chatcat-f3624.appspot.com",
-    messagingSenderId: "991839890104",
-    appId: "1:991839890104:web:50c54b5c7a428f1b44624d",
-    measurementId: "G-EN2XFHZ7ST"
+    apiKey: "AIzaSyAlBaCFinB-aIngyUsjgwjRxGvyrJmnA-c",
+    authDomain: "direct-pecheur.firebaseapp.com",
+    databaseURL: "https://direct-pecheur-default-rtdb.firebaseio.com",
+    projectId: "direct-pecheur",
+    storageBucket: "direct-pecheur.appspot.com",
+    messagingSenderId: "818286468462",
+    appId: "1:818286468462:web:6724b007647e3f9d92b57f",
+    measurementId: "G-GJJZR103LJ"
 };
 const firebaseApp= firebase.initializeApp(config)
 export const db = firebaseApp.firestore();

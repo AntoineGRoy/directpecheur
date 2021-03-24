@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { signin } from "../validation/auth";
 import { motion } from "framer-motion";
-import paw from "../img/paw.svg";
+import bluehook from "../img/bluehook.svg";
 
 const Login = () => {
   const [state, setState] = useState({
-    error: null,
-    email: null,
-    password: null
+    error: '',
+    email: '',
+    password: ''
   });
   function handleChange(event) {
-    console.log(event.target.value);
+    console.log(state);
     setState({
       ...state,
       [event.target.name]: event.target.value
@@ -89,7 +89,7 @@ const Login = () => {
             }}
             type="submit"
           >
-            <img alt="login" style={{ height: "3rem" }} src={paw} />
+            <img alt="login" style={{ height: "3rem" }} src={bluehook} />
           </motion.button>
         </div>
         <hr />

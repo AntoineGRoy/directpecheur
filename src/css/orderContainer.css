@@ -2,7 +2,7 @@ h2 {
   margin: 0;
   text-align: center;
 }
-.chat-container {
+.product-container {
   width: 0;
   height: 0;
   overflow: hidden;
@@ -13,12 +13,12 @@ h2 {
   -ms-transition: 2s ease-in-out;
   -o-transition: 2s ease-in-out;
 }
-.chat-container.chat-container-expanded {
+.product-container.product-container-expanded {
   width: auto;
   height: auto;
 }
 @media only screen and (max-width: 600px) {
-  .chat-container.chat-container-expanded {
+  .product-container.product-container-expanded {
     width: 100vw;
     height: auto;
   }
@@ -127,7 +127,7 @@ h2 {
 }
 /***GENERAL CONTAINER******************************************/
 
-.contact-container {
+.product-container {
   display: flex;
   display: -webkit-flexbox;
   justify-content: center;
@@ -137,9 +137,9 @@ h2 {
   width: 200px;
 }
 
-.user-container {
-
+.order-container {
   position: relative;
+  z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -149,11 +149,11 @@ h2 {
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
   -o-border-radius: 12px;
-  border: 1px solid rebeccapurple;
+  border: 1px solid rgba(59, 89, 147, 1);
   background: rgba(102, 51, 153, 0.01);
   margin: 0.5rem;
   width: 200px;
-  height: 150px;
+  height: 200px;
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 0px 0px rgb(30, 15, 46, 0.5);
   -moz-box-shadow: 0px 0px 0px 0px rgb(30, 15, 46, 0.5);
@@ -165,8 +165,8 @@ h2 {
   -o-transition: 0.5s ease-in-out all;
   text-align: center;
 }
-.user-container:hover,
-.user-container:focus {
+.order-container:hover,
+.order-container:focus {
   -webkit-box-shadow: 0px 5px 20px 0px rgb(30, 15, 46, 0.4);
   -moz-box-shadow: 0px 5px 20px 0px rgb(30, 15, 46, 0.4);
   box-shadow: 0px 5px 20px 0px rgb(30, 15, 46, 0.4);
@@ -179,7 +179,9 @@ h2 {
 .img-container {
   width: 120px;
   height: 120px;
+  z-index:0;
   margin: 0 auto;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -187,34 +189,34 @@ h2 {
 img.avatar {
   max-height: 100px;
   max-width: 120px;
+  z-index:0;
   width: auto;
   height: auto;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
-/************Disappear when chat is shown *************/
-.contact-container-reduced {
-  z-index: 9;
+/************Disappear when product is shown *************/
+.product-container-reduced {
+  z-index: 0;
 }
-.user-container-reduced {
-  z-index: -1;
+.product-container-reduced {
+  z-index: 0;
   pointer-events: none;
 }
 
 img.avatar.avatar-reduced {
-  z-index: -1;
-  pointer-events: none;
+  display:none;
 }
 h2.name {
   margin-top: 6px;
   font-weight: 300;
 }
 h2.name-reduced {
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
 }
 
 /*****************************************************/
-/*Elements only displayed when chat is open 
+/*Elements only displayed when product is open 
 /*****************************************************/
 
 .close-x {
@@ -228,8 +230,9 @@ h2.name-reduced {
   font-weight: bold;
   margin: 0.5rem;
 }
-.chat-container {
-  background: rgba(102, 51, 153, 0.9);
+.product-container {
+  background: rgba(59, 89, 147, 1);
+  z-index: 999;
 }
 
 .input-button-container {
@@ -262,11 +265,11 @@ h2.name-reduced {
   width: 65%;
 }
 
-.messages-container {
-  border: rebeccapurple solid 5px;
+.details-container {
+  border:rgba(59, 89, 147, 1) 5px;
 }
 
-.messagesUL {
+.detailsUL {
   background: rgba(255, 255, 255, 1);
   height: 100%;
   max-height: 60vh;
@@ -281,48 +284,17 @@ h2.name-reduced {
   bottom: 0;
   z-index:99;
 }
-.messageLI {
+.detailsLI {
   list-style: none;
 }
-.messageLI.userStyleLI {
-  text-align: right;
-  margin: 0.5rem 1rem 0.5rem 0.5rem;
-}
-.messageLI.targetStyleLI {
-  margin: 0.5rem 0.5rem 0.5rem 1rem;
-}
-.messageP {
-  padding: 0.75rem;
-  border-radius: 12px 12px 12px 0;
-  -webkit-border-radius: 12px 12px 12px 0;
-  -moz-border-radius: 12px 12px 12px 0;
-  -ms-border-radius: 12px 12px 12px 0;
-  -o-border-radius: 12px 12px 12px 0;
-  display: inline-block;
-  margin: 0.5rem;
-  overflow-wrap: normal;
-  width: auto;
-}
-.messageP span {
-  display: inline-block;
-  overflow-wrap: break-word;
-  max-width: 200px;
-}
-.userStyleP {
-  background: greenyellow;
-  margin-right: 1rem;
-}
-.targetStyleP {
-  background: yellow;
-}
+
 /***Friend Request**/
-.contact-friend-request-container{
+.product-friend-request-container{
   border-radius: 0;
   border:1px white solid;
   position: relative;
-  
 }
-.contact-friend-request-overlay{
+.product-friend-request-overlay{
 cursor: pointer;
 position: absolute;
 content:"";
@@ -337,7 +309,7 @@ background-repeat: no-repeat;
 background-position: center;
  transition: all ease-in-out 1s;
 }
-.contact-friend-request-overlay:hover{
+.product-friend-request-overlay:hover{
   opacity:.8;
 }
 

@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { signup, createUser } from "../validation/auth";
-import { config, auth } from "../firebase";
+import { auth } from "../firebase";
 import "../css/loginAndSignup.css";
 import { motion } from "framer-motion";
-import paw from "../img/paw.svg";
+import hook from "../img/bluehook.svg";
 
 const Signup = () => {
   const [state, setState] = useState({
     error: null,
-    contacts: [],
+    phone: "",
     email: "",
-    imageUrl: `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/default-image.png?alt=media`,
+    address:"",
     password: "",
     username: "",
-    friendRequests: ['QuO4Fv9OZEfPXkgSoXQZoUJilEE3']
   });
 
   function handleChange(event) {
@@ -28,13 +27,13 @@ const Signup = () => {
     setState({ ...state, error: "" });
     try {
       await signup(state.email, state.password);
-      await createUser(
-        auth.currentUser.uid,
-        state.username,
+      createUser(
+        state.phone,
         state.email,
-        state.imageUrl,
-        state.contacts,
-        state.friendRequests
+        state.address,
+        state.password,
+        state.username,
+        auth.currentUser.uid
       );
     } catch (error) {
       setState({ ...state, error: error.message });
@@ -56,9 +55,9 @@ const Signup = () => {
         </div>
         <div>
           <input
-            placeholder="Choose a Username"
+            placeholder="Nom Prénom"
             name="username"
-            type="text"
+            type="name"
             onChange={handleChange}
             value={state.username}
           ></input>
@@ -72,10 +71,30 @@ const Signup = () => {
             type="password"
           ></input>
         </div>
+        <div>
+          <input
+            placeholder="Téléphone"
+            name="phone"
+            onChange={handleChange}
+            value={state.phone}
+            type="tel"
+          ></input>
+        </div>
+        <div>
+          <input
+            placeholder="1 rue du Gourmet, Saint-François"
+            name="address"
+            onChange={handleChange}
+            value={state.adress}
+            type="text"
+          ></input>
+        </div>
+
+
         {state.error ? <p>{state.error}</p> : null}
         <motion.button
           style={{
-            background: "rebeccapurple",
+            background: "navy",
             color: "white",
             border: 0,
             borderRadius: 12,
@@ -89,7 +108,7 @@ const Signup = () => {
           }}
           type="submit"
         >
-          <img alt="sign-up" style={{ height: "3rem" }} src={paw} />
+          <img alt="sign-up" style={{ height: "3rem" }} src={hook} />
         </motion.button>
         <hr></hr>
         <p>

@@ -1,10 +1,11 @@
 import React from "react";
-import SearchContact from "./searchContact";
+import { getUserInfos } from "../helpersFunctions/get";
 import Logout from "./logout";
+import {NavLink}from "react-router-dom"
 import Profile from "./profile";
-import "../css/actionNav.css";
+//import "../css/actionNav.css";
 
-function ActionNav() {
+function ActionNav({userInfos}) {
   return (
     <div
       className="actionsNav"
@@ -26,7 +27,6 @@ function ActionNav() {
           width: "100%"
         }}
       >
-        <Profile />
         <Logout />
       </div>
     </div>

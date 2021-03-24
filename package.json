@@ -1,8 +1,8 @@
 {
-  "name": "chatty",
+  "name": "direct-pecheur",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://antoineFSG.github.io/chattyCat",
+  "homepage": "https://antoineFSG.github.io/direct-pecheur",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

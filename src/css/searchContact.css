@@ -5,7 +5,7 @@ button.search {
   color: white;
   outline: 0;
   display: inline;
-  background: rebeccapurple;
+  background: rgba(59, 89, 147, 1);
   cursor: pointer;
   margin: 1rem;
 }

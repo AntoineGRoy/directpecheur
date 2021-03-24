@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/direct-pecheur/static/css/main.d93f922e.chunk.css",
+    "main.js": "/direct-pecheur/static/js/main.00c14845.chunk.js",
+    "main.js.map": "/direct-pecheur/static/js/main.00c14845.chunk.js.map",
+    "runtime-main.js": "/direct-pecheur/static/js/runtime-main.0cf5ce56.js",
+    "runtime-main.js.map": "/direct-pecheur/static/js/runtime-main.0cf5ce56.js.map",
+    "static/js/2.2ea8659c.chunk.js": "/direct-pecheur/static/js/2.2ea8659c.chunk.js",
+    "static/js/2.2ea8659c.chunk.js.map": "/direct-pecheur/static/js/2.2ea8659c.chunk.js.map",
+    "index.html": "/direct-pecheur/index.html",
+    "precache-manifest.231fd4d390a49d64ad31d384fc330924.js": "/direct-pecheur/precache-manifest.231fd4d390a49d64ad31d384fc330924.js",
+    "service-worker.js": "/direct-pecheur/service-worker.js",
+    "static/css/main.d93f922e.chunk.css.map": "/direct-pecheur/static/css/main.d93f922e.chunk.css.map",
+    "static/js/2.2ea8659c.chunk.js.LICENSE.txt": "/direct-pecheur/static/js/2.2ea8659c.chunk.js.LICENSE.txt",
+    "static/media/orderContainer.css": "/direct-pecheur/static/media/addFriends.3bce66ec.svg",
+    "static/media/arrow.svg": "/direct-pecheur/static/media/arrow.ac0d7ca7.svg",
+    "static/media/bluehook.svg": "/direct-pecheur/static/media/bluehook.e2d6ddfc.svg",
+    "static/media/chatProfileViolet.svg": "/direct-pecheur/static/media/chatProfileViolet.93836193.svg",
+    "static/media/done.svg": "/direct-pecheur/static/media/done.914b421b.svg",
+    "static/media/exit.svg": "/direct-pecheur/static/media/exit.d8e250af.svg",
+    "static/media/hook.svg": "/direct-pecheur/static/media/hook.d52f2d80.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0cf5ce56.js",
+    "static/js/2.2ea8659c.chunk.js",
+    "static/css/main.d93f922e.chunk.css",
+    "static/js/main.00c14845.chunk.js"
+  ]
+}

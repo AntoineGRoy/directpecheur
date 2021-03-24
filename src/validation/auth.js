@@ -4,23 +4,23 @@ export function signup(email, password) {
   return auth.createUserWithEmailAndPassword(email, password);
 }
 export function createUser(
-  userId,
-  username,
-  email,
-  imageUrl,
-  contacts,
-  friendRequests
+  phone,
+    email,
+    address,
+    password,
+    username,
+    id
 ) {
   return db
     .collection("users")
     .doc(auth.currentUser.uid)
     .set({
-      userId: userId,
-      username: username,
+      phone: phone,
       email: email,
-      imageUrl: imageUrl,
-      contacts: contacts,
-      friendRequests: friendRequests
+      address: address,
+      password: password,
+      username: username,
+      id:id
     })
     .then(function() {
       console.log("Document successfully written!" + auth.currentUser);
@@ -31,5 +31,6 @@ export function createUser(
 }
 
 export function signin(email, password) {
-  return auth.signInWithEmailAndPassword(email, password);
+  let Email=email.toLowerCase();
+  return auth.signInWithEmailAndPassword(Email, password);
 }

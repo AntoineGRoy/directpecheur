@@ -4,7 +4,7 @@ import { UserContext } from '../usercontext'
 import '../css/imageUpload.css'
 import { motion } from 'framer-motion'
 
-function ImageUpload() {
+function ImageUpload({productUID}) {
     const [image, setImage] = useState(null)
     const [info, setInfo] = useState(null);
     const [changeImage, setChangeImage] = useState(false);
@@ -35,9 +35,8 @@ function ImageUpload() {
                         .then(url => {
                             console.log(url)
                             setInfo('All Done !');
-                            db.collection("users").doc(auth.currentUser.uid).set({
-                                imageUrl: `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/${image.name}?alt=media`,
-
+                            db.collection("products").doc(productUID).set({
+                                img_url: `https://firebasestorage.googleapis.com/v0/b/${config.storageBucket}/o/${image.name}?alt=media`,
                             }, { merge: true })
                                 .then(function () {
                                     console.log("Document successfully written!" + auth.currentUser);
@@ -100,13 +99,10 @@ function ImageUpload() {
             transition={{
                 duration: 1.5,
             }} style={{ marginTop: '1rem', width: '100vw', display: 'flex', flexWrap: 'wrap' }}>
-            <div style={{ maxWidth: "250px", display: 'flex', flexDirection: "column" }}>
-                <h3>{userInfos.username}<br />{userInfos.email}</h3>
-                <img style={{ width: '4rem', margin: '1rem auto' }} alt="user-avatar" src={userInfos.imageUrl} />
-                <h4 style={{ cursor: 'pointer', textDecoration: 'underline overline', marginTop: '-.5rem' }} onClick={() => { setChangeImage(!changeImage) }}>
-                    Change Image</h4>
-            </div>
-            <motion.div
+            <div style={{ width: "250px", display: 'flex', flexDirection: "column" }}>
+                 <h4 style={{ background:"white", padding:16,margin:"0 auto", width:200,cursor: 'pointer', textDecoration: 'underline overline', marginTop: '-.5rem' }} onClick={() => { setChangeImage(!changeImage) }}>
+                    Ajouter Image</h4>
+                    <motion.div
                 transition={{
                     duration: 1,
                     ease: "easeInOut"
@@ -121,11 +117,13 @@ function ImageUpload() {
                     }} >
                     <input className="inputfile" id="myFileInput" type='file' onChange={handleChange} />
                     <label htmlFor="myFileInput"><div style={{ transitionProperty: 'height', transition: '1s linear', border: '1px solid orange', margin: '1rem', padding: '.5rem', color: 'orange', background: 'white' }}>{image ? 'File Ready' : 'Choose a file'}</div></label>
-                    <button className='submit-file' style={{ margin: '.5rem auto', padding: '.5rem' }} onClick={handleUpload}>Upload</button>
+                    <button className='submit-file' style={{ margin: '.5rem 2rem', padding: '.5rem' }} onClick={handleUpload}>Upload</button>
                     <h3 style={{ color: 'red' }}>{info}</h3>
                     <h3 onClick={() => { setChangeImage(false) }} style={{ margin: '1rem', cursor: 'pointer' }}>Cancel</h3>
                 </motion.div>
             </motion.div>
+            </div>
+           
 
         </motion.div>
 
