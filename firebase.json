@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "/Users/antoineroy/Documents/devcode/directpecheur/directpecheur/build ",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
